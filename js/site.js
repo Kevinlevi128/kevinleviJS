@@ -6,6 +6,7 @@ function solicitarNombreYApellido(){
     solicitarNombreYApellido();
     solicitarNombreYApellido();
 */
+/*
 var nombre = prompt("ingresa tu nombre");
 alert("Bienvenido al turnero " + nombre)
 
@@ -50,3 +51,57 @@ console.log(persona3.nombre);
 console.log(persona3.apellido);
 console.log(persona3["edad"]);
 console.log(persona3["calle"]);
+*/
+/*
+function crearPersona (turno) {
+
+    let nombreIngresado = prompt("Ingresar nombre")
+
+    let apellidoIngresado = prompt("Ingresar apellido");
+
+    let edadIngresada = prompt("Ingresar edad");
+
+    let calleIngresada = prompt("Ingresar calle");
+
+    const persona = new Persona("Turno " + turno + " para: " + nombreIngresado, "Apellido: " + apellidoIngresado, "Edad: " + edadIngresada, "Calle: " + calleIngresada);
+    
+    return persona;
+}
+const persona = crearPersona(1);
+
+console.log(persona);
+*/
+
+
+
+
+
+//ARRAY
+
+class Producto {
+    constructor(nombre, talle, precio) {
+        this.nombre  = nombre.toUpperCase();
+        this.talle = talle
+        this.precio  = parseFloat(precio);  
+        this.vendido = false;
+    }
+    sumaIva() {
+        this.precio = this.precio * 1.21;
+    }
+    vender() {
+        this.vendido = true
+    }
+}
+//Declaramos un array de productos para almacenar objetos
+const productos = [];
+
+productos.push(new Producto("Pantalones", "S", "500"));
+productos.push(new Producto("Remeras", "S", "200"));
+productos.push(new Producto("Shorts", "S", "300"));
+productos.push(new Producto("Vestidos", "S", "800"));
+//Iteramos el array con for...of para modificarlos a todos
+for (const producto of productos)
+    producto.sumaIva();
+console.log(productos);
+
+
