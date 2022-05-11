@@ -104,22 +104,22 @@ for (const producto of productos)
     producto.sumaIva();
 console.log(productos);
 */
-
+/*
 let = prendas = [];
 class Producto {
     constructor(nombre, talle, precio) {
         this.nombre = nombre.toUpperCase();
         this.talle = talle
         this.precio = parseFloat(precio);
-        
+
     }
     sumaIva() {
         this.precio = this.precio * 1.21;
     }
 }
 var nombre = prompt("ingresa tu nombre");
-        alert("Bienvenido a la tienda " + nombre)
-        alert("Ingrese los datos a continuación para la busqueda de las prendas disponibles y con su precio final.")
+alert("Bienvenido a la tienda " + nombre)
+alert("Ingrese los datos a continuación para la busqueda de las prendas disponibles y con su precio final.")
 console.log(nombre);
 
 prendas.push(new Producto(prompt("Nombre de prenda: "),
@@ -129,5 +129,57 @@ prendas.push(new Producto(prompt("Nombre de prenda: "),
 console.log(prendas);
 for (const producto of prendas)
     producto.sumaIva();
+*/
+
+
+/*
+const productos = [
+{  id: 1,  nombre: "Arroz", precio: 125 },
+{  id: 2,  nombre: "Fideo", precio: 70 },
+{  id: 3,  nombre: "Pan"  , precio: 50},
+{  id: 4,  nombre: "Flan" , precio: 100}];
+
+for (const producto of productos) {
+let contenedor = document.createElement("div");
+//Definimos el innerHTML del elemento con una plantilla de texto
+contenedor.innerHTML = `<h3> ID: ${producto.id}</h3>
+              <p>  Producto: ${producto.nombre}</p>
+              <b> $ ${producto.precio}</b>`;
+document.body.appendChild(contenedor);
+}
+*/
+
+// DOM Y EVENTOS
+let parrafo = document.createElement("p");
+parrafo.innerHTML = "<h2>Completo el formulario correctamente?<h2>";
+document.body.append(parrafo);
+let texto = document.createElement("p");
+texto.innerHTML = "<h3>Si completo el formulario por favor seleccione el boton enviar, en caso contrario lo puede corregir o limpiar.<h3>";
+document.body.append(texto);
+
+
+
+let miFormulario = document.getElementById("formulario");
+miFormulario.addEventListener("submit", validarFormulario);
+
+function validarFormulario(e) {
+    console.log(e);
+    //Cancelamos el comportamiento del evento
+    e.preventDefault();
+    //Obtenemos el elemento desde el cual se disparó el evento
+    let formulario = e.target;
+    console.log("e.target", formulario);
+    //Obtengo el valor del primero hijo <input type="text">
+    console.log(formulario.children[0].value);
+    //Obtengo el valor del segundo hijo <input type="number"> 
+    console.log(formulario.children[1].value);  
+    console.log(formulario.children[2].value);
+    console.log(formulario.children[3].value);
+    console.log(formulario.children[4].value);
+    console.log(formulario.children[7].value);
+    console.log(formulario.children[9].value);
+    console.log(formulario.children[17].value);
+    console.log("Formulario Enviado");
+}
 
 

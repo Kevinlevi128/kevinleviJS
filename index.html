@@ -1,18 +1,40 @@
 
 <!DOCTYPE html>
 <html>
-
+    <meta charset="UTF-8"/>
 <head>
-    <title></title>
+    <title>LevinStore</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
 </head>
 
 <body>
-    <h1 class="miTitulo">Mi Titulo</h1>
+    <h1 class="miTitulo">Mi formulario</h1>
    
-    <h1>Segundo titulo</h1>
+    <form id="formulario">
+            <input type="text" placeholder="Nombres">
+            <input type="text" placeholder="Apellido">
+            <input type="email" placeholder="Correo Electronico">
+            <input type="edad" placeholder="Edad">
+            <select name="Estado Civil">
+                <option value="Soltero/a">Soltero/a</option>
+                <option value="Casado/a">Casado/a</option>
+                <option value="Divorciado/a">Divorciado/a</option>
+                <option value="Viudo/a">Viudo/a</option>
+                <option value="Concubinato">Concubinato</option>
+            </select><br>
+            <span>¿Desea recibir los newsletter?</span>
+            <input type="checkbox" name="acepta" value="1" /><br>
+            <textarea cols="30" rows="10" placeholder="Comentarios"></textarea><br>
+            <span>Hombre</span>
+            <input type="radio" name="Sexo" value="Hombre" />
+            <span>Mujer</span>
+            <input type="radio" name="Sexo" value="Mujer" /> <br>
+        <span>Acepta términos y condiciones</span>
+        <input type="checkbox" name="acepta" value="1" /><br>
 
-    <p>Mi Párrafo.</p>
+        <input type="submit" value="Enviar Formulario" />
+        <input type="reset" value="Limpiar Formulario" />
+    </form>
 
     <script src="js/site.js"></script>
 </body>
