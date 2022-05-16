@@ -213,11 +213,3 @@ function agregarProducto(id) {
         localStorage.setItem('carrito', JSON.stringify(nuevoCarrito));
     }
 }
-
-let usuario;
-let usuarioEnLS = JSON.stringify(localStorage.getItem("usuario"))
-if (usuarioEnLS) {
-    usuario = usuarioEnLS
-} else {
-    usuario = prompt("Ingrese su nombre de usuario")
-}
