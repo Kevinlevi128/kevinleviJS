@@ -195,7 +195,7 @@ for (const producto of productos) {
     //Definimos el innerHTML del elemento con una plantilla de texto
     contenedor.innerHTML = `<h3> ID: ${producto.id}</h3>
                             <p>  Producto: ${producto.nombre}</p>
-                            <strong> $ ${producto.precio}</strong>
+                            <strong> $ ${producto.precio * 1.21}</strong>
                             <button onclick="agregarProducto('${producto.id}')">Comprar </boton>
                             `;
     document.body.appendChild(contenedor);
