@@ -172,7 +172,7 @@ function validarFormulario(e) {
     //Obtengo el valor del primero hijo <input type="text">
     console.log(formulario.children[0].value);
     //Obtengo el valor del segundo hijo <input type="number"> 
-    console.log(formulario.children[1].value);  
+    console.log(formulario.children[1].value);
     console.log(formulario.children[2].value);
     console.log(formulario.children[3].value);
     console.log(formulario.children[4].value);
@@ -182,4 +182,42 @@ function validarFormulario(e) {
     console.log("Formulario Enviado");
 }
 
+localStorage.clear();
+const productos = [
+    { id: "R", nombre: "Remera", precio: 200 },
+    { id: "S", nombre: "Short", precio: 300 },
+    { id: "P", nombre: "Pantalones", precio: 500 },
+    { id: "V", nombre: "Vestidos", precio: 800 },
+];
 
+for (const producto of productos) {
+    let contenedor = document.createElement("div");
+    //Definimos el innerHTML del elemento con una plantilla de texto
+    contenedor.innerHTML = `<h3> ID: ${producto.id}</h3>
+                            <p>  Producto: ${producto.nombre}</p>
+                            <strong> $ ${producto.precio}</strong>
+                            <button onclick="agregarProducto('${producto.id}')">Comprar </boton>
+                            `;
+    document.body.appendChild(contenedor);
+}
+
+function agregarProducto(id) {
+    const carrito = JSON.parse(localStorage.getItem('carrito'));
+    const nuevoCarrito = [];
+    const producto = productos.find((elemento) => elemento.id === id);
+    if (carrito) {
+        nuevoCarrito.push(...carrito, producto);
+        localStorage.setItem('carrito', JSON.stringify(nuevoCarrito));
+    } else {
+        nuevoCarrito.push(producto);
+        localStorage.setItem('carrito', JSON.stringify(nuevoCarrito));
+    }
+}
+
+let usuario;
+let usuarioEnLS = JSON.stringify(localStorage.getItem("usuario"))
+if (usuarioEnLS) {
+    usuario = usuarioEnLS
+} else {
+    usuario = prompt("Ingrese su nombre de usuario")
+}
